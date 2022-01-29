@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use('./routes/index.js')
 
 app.get('/api/candidates', (req, res) => {
     const sql = `SELECT candidates.*, parties.name 
